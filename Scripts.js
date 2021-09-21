@@ -34,11 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-            name: "K-thun",
-            img: "Cards/K-thun.jpg"
-        },
-
-        {
             name: "Nyarlathotep",
             img: "Cards/Nyarlathotep.jpg"
         },
@@ -70,7 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ]
 
+    cardArray.sort(() => 0.5 - Math.random()) 
+
     const grid = document.querySelector(".grid")
+    const resultDisplay = document.querySelector("#result")
     var cardsChosen = []
     var cardsChosenId = []
     var cardsWon = []
@@ -99,13 +97,17 @@ document.addEventListener("DOMContentLoaded", () => {
             cardsWon.push(cardsChosen)
         }
         else {
-            cards[optionOneid].setAttribute("src", "Cards/White.jpg")
-            cards[optionTwoid].setAttribute("src", "Cards/White.jpg")
+            cards[optionOneId].setAttribute("src", "Cards/White.jpg")
+            cards[optionTwoId].setAttribute("src", "Cards/White.jpg")
             alert("Sorry, try again")
 
         }
         cardsChosen = []
         cardsChosenId = []
+        resultDisplay.textContent = cardsWon.length
+        if (cardsWon.length === cardArray.length/2) {
+            resultDisplay.textContent = "Congratulation! You found them all!"
+        }
     }
 
 
