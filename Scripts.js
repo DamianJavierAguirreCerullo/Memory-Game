@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
     //card options
     const cardArray = [
       {
@@ -131,6 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       ]
+
+
+
+
   
     cardArray.sort(() => 0.5 - Math.random())
   
@@ -150,7 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.appendChild(card)
       }
     }
-  
+
+
+
+
+
+    
     //check for matches
     function checkForMatch() {
       const cards = document.querySelectorAll("img")
@@ -181,6 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDisplay.textContent = " Congratulations! You found them all!"
       }
     }
+
+
+
+
+
+
   
     //flip your card
     function flipCard() {
